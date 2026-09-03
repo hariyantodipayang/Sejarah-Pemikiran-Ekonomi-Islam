@@ -10,6 +10,12 @@ Pemikiran Ekonomi Islam (ESY81301)**.
 - `topics/` — 20 halaman detail (konteks historis, pokok pemikiran, karya
   utama, relevansi kontemporer, rujukan jurnal), lengkap dengan navigasi
   sebelumnya/selanjutnya secara kronologis.
+- `topics/bedah-*.html` — halaman **bedah rujukan**: kajian mendalam yang
+  membedah sumber-sumber sebuah topik satu per satu (identitas sumber, isi
+  pokok, bacaan analitis, kekuatan &amp; keterbatasan), lalu menyintesiskannya.
+  Halaman ini tidak muncul di garis waktu; ia ditaut dari halaman topik
+  induknya lewat kartu `.deep-dive` dan tautan `.pagenav`. Yang sudah ada:
+  `bedah-ekonomi-arab-pra-islam.html` (Modul 2).
 - `assets/style.css`, `assets/script.js` — gaya dan interaksi (filter zaman)
   yang dipakai bersama seluruh halaman.
 
