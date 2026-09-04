@@ -16,7 +16,8 @@ Pemikiran Ekonomi Islam (ESY81301)**.
   Halaman ini tidak muncul di garis waktu; ia ditaut dari halaman topik
   induknya lewat kartu `.deep-dive` dan tautan `.pagenav`. Yang sudah ada:
   `bedah-ekonomi-arab-pra-islam.html`, `bedah-rasulullah-saw.html`, dan
-  `bedah-khulafaur-rasyidin.html` (Modul 2).
+  `bedah-khulafaur-rasyidin.html` (Modul 2), serta
+  `bedah-reformasi-fiskal-umayyah.html` (Modul 3).
 - `assets/style.css`, `assets/script.js` — gaya dan interaksi (filter zaman)
   yang dipakai bersama seluruh halaman.
 
