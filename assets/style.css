@@ -366,3 +366,65 @@ footer.site-foot strong{ color:var(--ink-soft); }
   position:absolute; left:0; top:11px; color:var(--gold-strong);
   font-family:"IBM Plex Mono",monospace; font-size:12px;
 }
+
+/* ---------- Kartu perbandingan peradaban (halaman topik) ---------- */
+.world-grid{ display:grid; gap:12px; margin:0 0 24px; }
+.world-card{
+  background:var(--surface); border:1px solid var(--rule);
+  border-left:3px solid var(--teal); border-radius:0 10px 10px 0;
+  padding:15px 18px; box-shadow:var(--shadow);
+}
+.world-card .w-head{ display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 12px; margin:0 0 8px; }
+.world-card .w-region{ font-family:"Fraunces",Georgia,serif; font-weight:560; font-size:16.5px; color:var(--ink); line-height:1.3; }
+.world-card .w-year{
+  font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:11px; letter-spacing:.03em;
+  color:var(--gold-strong); background:var(--amber-soft);
+  padding:3px 8px; border-radius:5px; white-space:nowrap;
+}
+.world-card p{ font-size:15.5px; line-height:1.68; color:var(--ink-soft); margin:0; }
+.world-card p + p{ margin-top:10px; }
+
+/* ---------- Garis waktu paralel (tab Dunia Sezaman) ---------- */
+.cmp{
+  border:1px solid var(--rule); border-radius:14px; background:var(--surface);
+  padding:20px 22px 22px; margin:0 0 18px; box-shadow:var(--shadow);
+}
+.cmp-head{ display:flex; flex-wrap:wrap; align-items:baseline; gap:8px 14px; margin:0 0 4px; }
+.cmp-head .cmp-num{
+  font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:12px;
+  color:var(--bg); background:var(--gold-strong); border-radius:50%;
+  width:26px; height:26px; display:inline-flex; align-items:center; justify-content:center; flex:none;
+}
+.cmp-head h3{ font-family:"Fraunces",Georgia,serif; font-weight:560; font-size:21px; margin:0; color:var(--ink); }
+.cmp-head .cmp-range{ font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:12.5px; color:var(--ink-faint); margin-left:auto; white-space:nowrap; }
+.cmp-dek{ font-size:15.5px; line-height:1.68; color:var(--ink-soft); margin:0 0 18px; max-width:72ch; }
+
+.cmp-cols{ display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+@media (max-width:760px){ .cmp-cols{ grid-template-columns:1fr; gap:24px; } .cmp-head .cmp-range{ margin-left:0; width:100%; } }
+.cmp-col h4{
+  font-family:"Public Sans",sans-serif; font-weight:700; font-size:12px;
+  letter-spacing:.1em; text-transform:uppercase; margin:0 0 12px;
+  padding-bottom:8px; border-bottom:1px solid var(--rule);
+}
+.cmp-col.islam h4{ color:var(--teal); border-bottom-color:var(--teal); }
+.cmp-col.lain h4{ color:var(--gold-strong); border-bottom-color:var(--gold-strong); }
+.cmp-item{ margin:0 0 14px; }
+.cmp-item:last-child{ margin-bottom:0; }
+.cmp-item .ci-label{
+  font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:11px;
+  letter-spacing:.04em; color:var(--ink-faint); display:block; margin-bottom:3px;
+}
+.cmp-item p{ font-size:15px; line-height:1.62; color:var(--ink-soft); margin:0; }
+.cmp-item p strong{ color:var(--ink); font-weight:600; }
+.cmp-item a{ color:var(--teal); text-decoration:none; font-weight:600; }
+.cmp-item a:hover{ text-decoration:underline; }
+.cmp-benang{
+  margin:20px 0 0; padding:14px 18px;
+  background:var(--surface-soft); border-radius:10px;
+}
+.cmp-benang .cb-title{
+  font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:11px;
+  letter-spacing:.08em; text-transform:uppercase; color:var(--gold-strong);
+  margin:0 0 7px; font-weight:500;
+}
+.cmp-benang p{ font-size:15.5px; line-height:1.68; color:var(--ink-soft); margin:0; }

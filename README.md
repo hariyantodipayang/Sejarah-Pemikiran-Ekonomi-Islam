@@ -5,7 +5,7 @@ dan pemikiran ekonomi Islam — dari ekonomi Jazirah Arab pra-Islam hingga era
 kontemporer pasca krisis 2008. Dibuat untuk mata kuliah **Sejarah dan
 Pemikiran Ekonomi Islam (ESY81301)**.
 
-Situs ini kini terdiri atas **dua bagian (tab)** pada halaman depan:
+Situs ini kini terdiri atas **tiga bagian (tab)** pada halaman depan:
 
 - **Bagian I — Garis Waktu.** Garis waktu utama, bisa disaring per zaman,
   setiap entri menaut ke halaman detailnya. Ini isi situs sejak awal dan tetap
@@ -13,17 +13,28 @@ Situs ini kini terdiri atas **dua bagian (tab)** pada halaman depan:
 - **Bagian II — Kajian 7 Artikel.** Bedah mendalam atas tujuh artikel jurnal
   yang menjadi bahan diskusi kelas SPEI Pascasarjana IAIN Curup, satu halaman
   per artikel di dalam folder `kajian/`.
+- **Bagian III — Dunia Sezaman.** Garis waktu paralel dalam delapan periode:
+  kolom dunia Islam berhadapan dengan kolom peradaban lain (Bizantium, Eropa
+  Barat, Tiongkok, India, Persia, Jepang, Afrika, dan Amerika pra-Kolumbus),
+  dengan fokus pada apa yang terjadi secara **ekonomi** pada tahun-tahun yang
+  sama. Isinya seluruhnya berada di dalam `index.html`.
 
 Perpindahan tab ditangani `assets/script.js` dan mendukung tautan langsung
-lewat tanda pagar: `index.html#timeline` dan `index.html#kajian`.
+lewat tanda pagar: `index.html#timeline`, `index.html#kajian`, dan
+`index.html#dunia`. Daftar nama tab dibaca langsung dari tombol yang ada,
+sehingga menambah tab baru tidak menuntut perubahan pada fungsi JavaScript-nya.
 
 Struktur berkasnya:
 
 - `index.html` — halaman depan berisi kedua tab: garis waktu (dengan saringan
   zaman) dan daftar tujuh artikel kajian.
 - `topics/` — 20 halaman detail (konteks historis, pokok pemikiran, karya
-  utama, relevansi kontemporer, rujukan jurnal), lengkap dengan navigasi
-  sebelumnya/selanjutnya secara kronologis.
+  utama, relevansi kontemporer, **perbandingan dengan peradaban lain**, dan
+  rujukan jurnal), lengkap dengan navigasi sebelumnya/selanjutnya secara
+  kronologis. Bagian **"Di Belahan Dunia Lain"** (`data-mark="5"`) pada tiap
+  halaman memuat tiga sampai tujuh kartu `.world-card` berisi apa yang terjadi
+  secara ekonomi di peradaban non-Islam pada tahun yang sama, ditutup satu
+  kotak *Benang merah*.
 - `topics/bedah-*.html` — halaman **bedah rujukan**: kajian mendalam yang
   membedah sumber-sumber sebuah topik satu per satu (identitas sumber, isi
   pokok, bacaan analitis, kekuatan &amp; keterbatasan), lalu menyintesiskannya.
@@ -47,7 +58,10 @@ Struktur berkasnya:
   `6-haidar-analisis-sentimen.html` (Haidar &amp; Rusadi 2022), dan
   `7-dundar-sosiologi-ekonomi.html` (Dündar 2022).
 - `assets/style.css`, `assets/script.js` — gaya dan interaksi (tab utama serta
-  saringan zaman) yang dipakai bersama seluruh halaman.
+  saringan zaman) yang dipakai bersama seluruh halaman. Komponen yang perlu
+  diketahui saat menambah isi: `.world-grid`/`.world-card` untuk kartu
+  perbandingan pada halaman topik, dan `.cmp`/`.cmp-cols`/`.cmp-benang` untuk
+  blok garis waktu paralel pada tab Dunia Sezaman.
 
 Tidak ada dependensi build (tidak perlu `npm install`) — situs ini murni
 HTML statis, siap diterbitkan langsung sebagai GitHub Pages.
@@ -107,6 +121,20 @@ dipertahankan: (1) memisahkan dengan jelas mana yang merupakan isi artikel dan
 mana yang merupakan pengembangan penyusun halaman; (2) menyatakan terbuka bila
 berkas sumbernya tidak lengkap — seperti pada halaman Artikel 2, yang berkas
 PDF-nya hanya memuat dua halaman pertama.
+
+## Menambah periode pada tab Dunia Sezaman
+
+Duplikasi salah satu blok `<div class="cmp">` di dalam panel
+`data-panel="dunia"` pada `index.html`, lalu isi dua kolomnya: `.cmp-col.islam`
+untuk dunia Islam dan `.cmp-col.lain` untuk peradaban lain. Tiap butir berupa
+`.cmp-item` dengan `.ci-label` sebagai penanda wilayah dan tahun. Tutup dengan
+`.cmp-benang` yang menyatakan pelajaran perbandingannya.
+
+Dua kaidah dipegang konsisten di seluruh bagian perbandingan dan sebaiknya
+dipertahankan: (1) **kesamaan tahun bukan bukti saling memengaruhi** — klaim
+peminjaman gagasan menuntut bukti dokumenter; (2) **mengemukakan gagasan lebih
+dulu tidaklah cukup** — yang menentukan dalam sejarah adalah apakah gagasan itu
+berhasil dilembagakan dan dibesarkan.
 
 ## Berkas pendamping
 

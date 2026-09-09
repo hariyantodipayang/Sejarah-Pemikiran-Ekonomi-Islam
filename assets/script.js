@@ -4,7 +4,8 @@
 // tidak ada, fungsinya berhenti tanpa efek samping (no-op).
 // ---------------------------------------------------------------------------
 
-// 1) Tab utama: "Garis Waktu" dan "Kajian 7 Artikel" (hanya ada di index.html).
+// 1) Tab utama: "Garis Waktu", "Kajian 7 Artikel", dan "Dunia Sezaman"
+//    (hanya ada di index.html).
 (function () {
   var tabs = document.querySelectorAll('.maintab');
   var panels = document.querySelectorAll('.panel');
@@ -31,11 +32,14 @@
     });
   });
 
-  // Buka tab sesuai tautan (#kajian atau #timeline) bila ada; selain itu tab
-  // pertama yang terbuka.
+  // Buka tab sesuai tautan (#kajian, #dunia, atau #timeline) bila ada; selain
+  // itu tab pertama yang terbuka. Daftar nama diambil langsung dari tombol
+  // yang ada, sehingga penambahan tab baru tidak perlu mengubah fungsi ini.
+  var NAMA = [];
+  tabs.forEach(function (t) { NAMA.push(t.getAttribute('data-tab')); });
   function fromHash() {
     var h = (location.hash || '').replace('#', '');
-    return (h === 'kajian' || h === 'timeline') ? h : null;
+    return NAMA.indexOf(h) !== -1 ? h : null;
   }
   var awal = fromHash();
   if (awal) activate(awal, false);
