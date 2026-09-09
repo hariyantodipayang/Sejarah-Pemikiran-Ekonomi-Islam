@@ -5,8 +5,22 @@ dan pemikiran ekonomi Islam — dari ekonomi Jazirah Arab pra-Islam hingga era
 kontemporer pasca krisis 2008. Dibuat untuk mata kuliah **Sejarah dan
 Pemikiran Ekonomi Islam (ESY81301)**.
 
-- `index.html` — garis waktu utama, bisa disaring per zaman, setiap entri
-  menaut ke halaman detailnya.
+Situs ini kini terdiri atas **dua bagian (tab)** pada halaman depan:
+
+- **Bagian I — Garis Waktu.** Garis waktu utama, bisa disaring per zaman,
+  setiap entri menaut ke halaman detailnya. Ini isi situs sejak awal dan tetap
+  menjadi tab yang terbuka pertama kali.
+- **Bagian II — Kajian 7 Artikel.** Bedah mendalam atas tujuh artikel jurnal
+  yang menjadi bahan diskusi kelas SPEI Pascasarjana IAIN Curup, satu halaman
+  per artikel di dalam folder `kajian/`.
+
+Perpindahan tab ditangani `assets/script.js` dan mendukung tautan langsung
+lewat tanda pagar: `index.html#timeline` dan `index.html#kajian`.
+
+Struktur berkasnya:
+
+- `index.html` — halaman depan berisi kedua tab: garis waktu (dengan saringan
+  zaman) dan daftar tujuh artikel kajian.
 - `topics/` — 20 halaman detail (konteks historis, pokok pemikiran, karya
   utama, relevansi kontemporer, rujukan jurnal), lengkap dengan navigasi
   sebelumnya/selanjutnya secara kronologis.
@@ -19,8 +33,21 @@ Pemikiran Ekonomi Islam (ESY81301)**.
   `bedah-khulafaur-rasyidin.html` (Modul 2), serta
   `bedah-reformasi-fiskal-umayyah.html` (Modul 3) dan
   `bedah-abu-yusuf-kitab-al-kharaj.html` (Modul 4).
-- `assets/style.css`, `assets/script.js` — gaya dan interaksi (filter zaman)
-  yang dipakai bersama seluruh halaman.
+- `kajian/` — tujuh halaman kajian artikel, masing-masing bersusunan sama:
+  cara membaca halaman, kartu identitas artikel, masalah yang diangkat, peta
+  isi runut bagian per bagian, temuan inti, istilah kunci dalam bahasa
+  sederhana, bacaan analitis, kekuatan &amp; keterbatasan, bahan untuk
+  keyspeaker dan book chapter (lengkap dengan pertanyaan diskusi), serta
+  kaitan ke halaman-halaman pada garis waktu. Berkasnya:
+  `1-islahi-tiga-puluh-tahun.html` (Islahi 2007),
+  `2-orman-sumber-sumber.html` (Orman 1997),
+  `3-schumpeterian-gap.html` (Ali &amp; Thompson 1999),
+  `4-cizakca-sistem-ekonomi.html` (Çizakça 2020),
+  `5-handoko-analisis-isi.html` (Handoko 2020),
+  `6-haidar-analisis-sentimen.html` (Haidar &amp; Rusadi 2022), dan
+  `7-dundar-sosiologi-ekonomi.html` (Dündar 2022).
+- `assets/style.css`, `assets/script.js` — gaya dan interaksi (tab utama serta
+  saringan zaman) yang dipakai bersama seluruh halaman.
 
 Tidak ada dependensi build (tidak perlu `npm install`) — situs ini murni
 HTML statis, siap diterbitkan langsung sebagai GitHub Pages.
@@ -66,6 +93,20 @@ yang sesuai (ikuti pola `<a class="entry-link" href="topics/nama-file.html"
 data-era="...">...</a>` yang sudah ada). Jangan lupa memperbarui tautan
 "Sebelumnya / Selanjutnya" (`.pagenav`) pada halaman sebelum dan sesudahnya
 agar urutan kronologis tetap tersambung.
+
+## Menambah halaman kajian artikel
+
+Duplikasi salah satu berkas di `kajian/`, ganti isinya mengikuti susunan
+sepuluh bagian yang sama (penanda `data-mark="0"` sampai `data-mark="9"`),
+lalu tambahkan kartu tautannya pada panel `data-panel="kajian"` di
+`index.html`. Jangan lupa memperbarui tautan "Sebelumnya / Selanjutnya"
+(`.pagenav`) pada halaman sebelum dan sesudahnya.
+
+Dua kebiasaan yang dipakai konsisten di seluruh halaman kajian dan sebaiknya
+dipertahankan: (1) memisahkan dengan jelas mana yang merupakan isi artikel dan
+mana yang merupakan pengembangan penyusun halaman; (2) menyatakan terbuka bila
+berkas sumbernya tidak lengkap — seperti pada halaman Artikel 2, yang berkas
+PDF-nya hanya memuat dua halaman pertama.
 
 ## Berkas pendamping
 
