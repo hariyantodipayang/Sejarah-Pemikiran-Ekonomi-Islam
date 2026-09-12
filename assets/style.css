@@ -237,6 +237,16 @@ h1 em{ font-style:italic; font-weight:420; color:var(--teal); }
   .src-meta dd{ margin-bottom:10px; }
 }
 
+.file-links{ display:flex; flex-wrap:wrap; gap:8px; }
+.file-chip{
+  display:inline-flex; align-items:center; gap:6px;
+  font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:12px; font-weight:500;
+  letter-spacing:.01em; padding:6px 12px; border-radius:999px;
+  background:var(--teal-soft); color:var(--teal); text-decoration:none;
+  border:1px solid transparent; transition:background .15s ease,border-color .15s ease;
+}
+.file-chip:hover{ background:var(--surface); border-color:var(--teal); text-decoration:none; }
+
 .src-note{
   font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:11px;
   color:var(--gold-strong); background:var(--amber-soft);
